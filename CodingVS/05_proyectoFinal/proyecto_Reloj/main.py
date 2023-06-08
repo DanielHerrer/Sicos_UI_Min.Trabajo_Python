@@ -1,7 +1,8 @@
 # Daniel Franco Herrera
 
-import tkinter as tk
 import time
+import tkinter as tk
+from tkinter import ttk
 from tkinter import messagebox
 
 def mostrar_alerta():
@@ -22,20 +23,26 @@ def iniciar_temporizador():
     etiqueta_temporizador.config(text="¡Tiempo completado!")  
     mostrar_alerta()  # Finalizado while configura etiqueta temp. como "¡tiempo completado!"
 
-ventana = tk.Tk()   # Se crea la ventana
-ventana.title("Reloj")
+window = tk.Tk()   # Se crea la ventana
+window.title("- Reloj Temporizador -")
 
-etiqueta_reloj = tk.Label(ventana, font=("Arial", 24))  # Se crea un label, se vincula a ventana y le damos font size
-etiqueta_reloj.grid(row=1,column=0)  # Se empaqueta de forma predeterminada la etiqueta reloj
+ventana = tk.Frame(window, padx=20, pady=20)  # Crea un Frame con padding de 20 píxeles en cada lado
+ventana.pack()
+ventana.configure(background='#1D1B2F')
 
-etiqueta_temporizador = tk.Label(ventana, font=("Arial", 24))
-etiqueta_temporizador.grid(row=2,column=0)  # Se empaqueta de forma predeterminada la etiqueta temporizador
+etiqueta_reloj = tk.Label(ventana, font=("Montserrat", 36, "bold"), bg='#1D1B2F', fg='light green')
+etiqueta_reloj.grid(row=1, column=0)
 
-entry_temporizador = tk.Entry(ventana, font=("Arial", 18))
-entry_temporizador.grid(row=3,column=0)    # Se empaqueta de forma predeterminada el input entry
+etiqueta_temporizador = tk.Label(ventana, font=("Montserrat", 18), bg='#1D1B2F', fg='light green')
+etiqueta_temporizador.grid(row=2, column=0)
 
-boton_iniciar_temporizador = tk.Button(ventana, text="Iniciar Temporizador", command=iniciar_temporizador)
-boton_iniciar_temporizador.grid(row=4,column=0) 
+entry_temporizador = tk.Entry(ventana, font=("Arial", 18), bg='#1D1B2F', fg='light green', insertbackground='light green')
+entry_temporizador.grid(row=3, column=0)
+
+boton_iniciar_temporizador = tk.Button(ventana, text="Iniciar Temporizador", command=iniciar_temporizador, font=('Arial', 12), bg='light green', fg='black', padx=10, pady=5, bd=0, relief=tk.SOLID)
+boton_iniciar_temporizador.configure(borderwidth=2, highlightthickness=2)
+boton_iniciar_temporizador.grid(row=4, column=0, pady=(20))
+
 actualizar_RelojPorSeg()
 
 ventana.mainloop()

@@ -1,0 +1,23 @@
+- POO
+
+-GUI --> interfaz grafica
+
+--> base de datos -->relacionales
+
+xampp,hable de normalizacion de tablas,diagramas entidad relacion
+
+- apis -->json
+
+django framework
+
+servicios web con django
+
+Patrones de diseño --> MVC ( modelo vista controlador)
+
+app del clima,consume un json de un 3ero que trae los datos de el clima en tiempo real
+
+ingles --- conversacional
+
+js,mern, mean , sitos web dinamicos
+
+django,cs de datos
